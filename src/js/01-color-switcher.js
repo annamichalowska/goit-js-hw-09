@@ -12,9 +12,11 @@ buttonStart.addEventListener('click', () => {
     document.body.style.backgroundColor = colorValue;
   }, 1000);
   buttonStart.disabled = true;
+  buttonStop.disabled = false;
 });
 
 buttonStop.addEventListener('click', () => {
   clearInterval(timerId);
+  buttonStop.disabled = true;
   buttonStart.disabled = false;
 });
