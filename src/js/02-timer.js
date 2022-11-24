@@ -14,20 +14,21 @@ const options = {
 };
 
 flatpickr('#datetime-picker', { ...options });
-const choiceData = () => {
-  const newData = options.defaultDate;
-  const actualData = new Date();
-  console.log(newData);
-  console.log(actualData);
-  console.log(newData.getTime());
-  console.log(actualData.getTime());
-  if (newData.getTime() < actualData.getTime()) {
-    console.log('ZŁA DATA!!!!!');
-    buttonStart.disabled = false;
-  } else {
-    console.log('DOBRA DATA!!!!');
-    buttonStart.disabled = true;
-  }
-};
+
+const newData = options.defaultDate;
+console.log(newData);
+console.log(newData.getTime());
+
+const actualData = new Date();
+console.log(actualData);
+console.log(actualData.getTime());
+
+if (newData.getTime() > actualData.getTime()) {
+  console.log('ZŁA DATA!!!!!');
+  buttonStart.disabled = true;
+} else {
+  console.log('DOBRA DATA!!!!');
+  buttonStart.disabled = false;
+}
 
 //console.clear();
