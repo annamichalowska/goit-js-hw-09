@@ -10,6 +10,12 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
+    if (selectedDates[0] < new Date()) {
+      alert('Please choose a date in the future');
+      buttonStart.disabled = true;
+    } else {
+      buttonStart.disabled = false;
+    }
   },
 };
 
@@ -22,13 +28,3 @@ console.log(newData.getTime());
 const actualData = new Date();
 console.log(actualData);
 console.log(actualData.getTime());
-
-if (newData.getTime() > actualData.getTime()) {
-  console.log('ZŁA DATA!!!!!');
-  buttonStart.disabled = true;
-} else {
-  console.log('DOBRA DATA!!!!');
-  buttonStart.disabled = false;
-}
-
-//console.clear();
