@@ -4,6 +4,7 @@ const form = document.querySelector('.form');
 const inputDelay = document.querySelector('input[name=delay]');
 const inputDelayStep = document.querySelector('input[name=step]');
 const inputAmount = document.querySelector('input[name=amount]');
+const createPromisesBtn = document.querySelector('button');
 
 function createPromise(position, delay) {
   const promise = new Promise((resolve, reject) => {
@@ -40,7 +41,7 @@ const submitClick = event => {
       });
     timeDelay += stepDelay;
   }
-  event.currentTarget.reset();
+  createPromisesBtn.disabled = true;
 };
 
 form.addEventListener('submit', submitClick);
