@@ -68,6 +68,7 @@ const options = {
         clearInterval(timerId);
       }
       timerId = setInterval(countdownTimer, 1000);
+      buttonStart.disabled = true;
     };
 
     buttonStart.addEventListener('click', onClick);
