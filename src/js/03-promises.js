@@ -42,6 +42,9 @@ const submitClick = event => {
     timeDelay += stepDelay;
   }
   createPromisesBtn.disabled = true;
+  setTimeout(() => {
+    createPromisesBtn.disabled = false;
+  }, timeDelay + stepDelay * amountValue);
 };
 
 form.addEventListener('submit', submitClick);
